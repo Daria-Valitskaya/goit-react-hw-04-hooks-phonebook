@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/goit-react-hw-04-hooks-phonebook/static/css/main.d82b7329.chunk.css",
+    "main.js": "/goit-react-hw-04-hooks-phonebook/static/js/main.df42bdef.chunk.js",
+    "main.js.map": "/goit-react-hw-04-hooks-phonebook/static/js/main.df42bdef.chunk.js.map",
+    "runtime-main.js": "/goit-react-hw-04-hooks-phonebook/static/js/runtime-main.cbe52520.js",
+    "runtime-main.js.map": "/goit-react-hw-04-hooks-phonebook/static/js/runtime-main.cbe52520.js.map",
+    "static/js/2.8362e456.chunk.js": "/goit-react-hw-04-hooks-phonebook/static/js/2.8362e456.chunk.js",
+    "static/js/2.8362e456.chunk.js.map": "/goit-react-hw-04-hooks-phonebook/static/js/2.8362e456.chunk.js.map",
+    "index.html": "/goit-react-hw-04-hooks-phonebook/index.html",
+    "static/css/main.d82b7329.chunk.css.map": "/goit-react-hw-04-hooks-phonebook/static/css/main.d82b7329.chunk.css.map",
+    "static/js/2.8362e456.chunk.js.LICENSE.txt": "/goit-react-hw-04-hooks-phonebook/static/js/2.8362e456.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/goit-react-hw-04-hooks-phonebook/static/media/mstiteli-fil-m-ironman-oboi-2560x1080_14.79ef4451.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cbe52520.js",
+    "static/js/2.8362e456.chunk.js",
+    "static/css/main.d82b7329.chunk.css",
+    "static/js/main.df42bdef.chunk.js"
+  ]
+}

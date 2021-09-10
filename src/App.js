@@ -1,11 +1,14 @@
 import { v4 as uuidv4 } from "uuid";
-import React, { Component } from "react";
+import React, { useState } from "react";
 import ContactForm from "./Components/ContactForm/ContactForm";
 import ContactList from "./Components/ContactList/ContactList";
 import Filter from "./Components/Filter/Filter";
 import Section from "./Components/Section/Section";
 
-class App extends Component {
+export default function App() {
+  
+
+  const [filter, setFilter] = useState('')
   state = {
     contacts: [
       { id: "id-1", name: "Rosie Simpson", number: "459-12-56" },
@@ -13,7 +16,6 @@ class App extends Component {
       { id: "id-3", name: "Eden Clements", number: "645-17-79" },
       { id: "id-4", name: "Annie Copeland", number: "227-91-26" },
     ],
-    filter: "",
   };
 
   componentDidMount() {
@@ -29,14 +31,14 @@ class App extends Component {
     }
   }
 
-  deleteContact = (contactId) => {
+const  deleteContact = (contactId) => {
     this.setState((prevState) => ({
       contacts: prevState.contacts.filter(
         (contact) => contact.id !== contactId
       ),
     }));
   };
-  onAddContact = ({ name, number }) => {
+  const onAddContact = (name, number ) => {
     const contact = {
       id: uuidv4(),
       name,
@@ -50,39 +52,37 @@ class App extends Component {
       }));
     }
   };
-  onChangeFilter = (event) => {
+ const onChangeFilter = (event) => {
     this.setState({ filter: event.currentTarget.value });
   };
-  filteredVisibleContacts = () => {
+ const filteredVisibleContacts = () => {
     const { contacts, filter } = this.state;
     const normalizedFilter = filter.toLocaleLowerCase();
     return contacts.filter((contact) =>
       contact.name.toLocaleLowerCase().includes(normalizedFilter)
     );
   };
-  render() {
+
     const { filter } = this.state;
 
-    const filteredContactList = this.filteredVisibleContacts();
+
     return (
       <div>
         <Section>
           <h1>Phonebook</h1>
-          <ContactForm onAddContact={this.onAddContact} />
+          <ContactForm onAddContact={onAddContact} />
         </Section>
         <Section>
           <h2>My Contacts</h2>
-          <Filter value={filter} onChangeFilter={this.onChangeFilter} />
+          <Filter value={filter} onChangeFilter={onChangeFilter} />
         </Section>
         <Section>
           <ContactList
-            contacts={filteredContactList}
-            deleteContact={this.deleteContact}
+            contacts={filteredVisibleContacts()}
+            deleteContact={deleteContact}
           />
         </Section>
       </div>
     );
-  }
+  
 }
-
-export default App;

@@ -2,7 +2,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import s from "./ContactForm.module.css";
 
-export default function ContactForm() {
+export default function ContactForm({ onAddContact }) {
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
 
